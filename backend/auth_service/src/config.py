@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     GITHUB_CLIENT_ID: str
     GITHUB_CLIENT_SECRET: str
 
-    BASE_URL: str = "http://localhost:8000"
+    FRONTEND_URL: str = "http://localhost:3000"
+    BACKEND_URL: str = "http://localhost:8000"
 
 settings = Settings()
