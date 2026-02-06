@@ -4,14 +4,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update, and_, or_
 from fastapi import HTTPException, status
 
-from app.models.user import User, UserStatus
-from app.schemas.user import UserCreate, Token
-from app.core.security import (
+from src.models import User, UserStatus
+from src.schemas import UserCreate, Token
+from src.security import (
     verify_password, get_password_hash,
     create_access_token, create_refresh_token
 )
-from app.utils.email import send_verification_email, send_password_reset_email
-from app.config import settings
+from src.utils import send_verification_email, send_password_reset_email
+from src.config import settings
 
 
 class AuthService:
